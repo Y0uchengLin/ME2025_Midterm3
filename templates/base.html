@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="/static/css/index.css">
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="static/js/orderadd.js" defer></script>
-        <title>Sales Management System</title>
-    </head>
-    <body>
-        <nav class="navbar">
-            <button onclick="location.assign('/')">訂單管理</button>
-        </nav>
-        {% block section %}{% endblock %}
-        {% if warning %}
-            <script>alert("{{ warning }}")</script>
-        {% endif %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>訂單系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <h1>訂單管理系統</h1>
+    {% block section %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/orderadd.js') }}"></script>
+</body>
 </html>
